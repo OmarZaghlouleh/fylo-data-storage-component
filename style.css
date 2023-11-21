@@ -1,0 +1,433 @@
+:root{
+
+    --gradient_1_color:hsl(6, 100%, 80%);
+    --gradient_2_color:hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Raleway', Courier, monospace;
+    color: var(--pale-blue);
+
+}
+
+body{
+    /* Style */
+    background: var(--very-dark-blue) url(images/bg-desktop.png) no-repeat bottom ;
+    background-size:100vw 50vh;
+    /* Layout */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+
+   
+}
+main{
+     /* Layout */
+     display: flex;
+     min-height: 100vh;
+     width: 100%;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.transition{
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.cards{
+    display: flex;
+     justify-content: center;
+     align-items: flex-end;   
+}
+.cards-shadow{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.212);
+
+}
+.fylo-card{
+   width: 280px;
+   height: 160px;
+   background-color: var(--dark-blue);
+   border-radius: 6px 75px 6px 6px;
+   -webkit-border-radius: 6px 75px 6px 6px;
+   -moz-border-radius: 6px 75px 6px 6px;
+   -ms-border-radius: 6px 75px 6px 6px;
+   -o-border-radius: 6px 75px 6px 6px;
+   cursor: pointer;
+   padding-bottom:15px ;
+}
+
+.fylo-card img{
+    margin-left: 33px;
+    margin-top: 33px;
+    margin-bottom: 22px;
+    width: 40%;
+    height: 30%;
+}
+
+.fylo-card .icons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 33px;
+}
+.fylo-card .icons div{
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: var(--very-dark-blue);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: 0.1s;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+}
+
+.fylo-card .document-icon{
+    background-image: url(images/icon-document.svg);
+    background-size: 15px;
+}
+.fylo-card .folder-icon{
+    background-image: url(images/icon-folder.svg);
+    background-size: 18px;
+}
+.fylo-card .upload-icon{
+    background-image: url(images/icon-upload.svg);
+    background-size: 18px;
+}
+
+/* Storage */
+
+.storage-card{
+    width: 430px;
+    height: 120px;
+    background-color: var(--dark-blue);
+    margin-left: 25px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    position: relative;
+}
+.storage-card-content{
+    width: 85%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.storage-card p{
+    margin-bottom: 12px;
+    font-weight: 200;
+    font-size: 12px;
+}
+.storage-card p span{
+    font-weight: 700;
+    font-size: 12px;
+
+}
+
+
+
+.storage-card .progress-background{
+    background-color: rgba(0, 0, 0, 0.30);
+    width: 100%;
+    height: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    position: relative;
+}
+.storage-card .progress{
+   height: 80%;
+   width: 73%;
+   margin-left: 2px;
+   background-image: linear-gradient(90deg,var(--gradient_1_color), var(--gradient_2_color));
+   border-radius: 15px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   -ms-border-radius: 15px;
+   -o-border-radius: 15px;
+   overflow: hidden;
+   position: relative;
+}
+.storage-card .progress::after{
+   content: "";
+   position: absolute;
+   width: 8.5px;
+   height: 8.5px;
+   border-radius: 50%;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+   background-color: var(--pale-blue);
+   right: 2px;
+   top: calc(50% - 4.25px);
+}
+
+.progress::before{
+   content: "";
+   position: absolute;
+   width: 0px;
+   height: 8.5px;
+   border-radius: 50%;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+    background-color: var(--pale-blue);
+    transition: transform 0.3;
+    -webkit-transition: transform 0.3;
+    -moz-transition: transform 0.3;
+    -ms-transition: transform 0.3;
+    -o-transition: transform 0.3;
+    top: calc(50% - 4.25px);
+}
+
+.size{
+    width: 100%;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.size p{
+    font-weight: 700;
+    font-size: 10px;
+}
+
+
+.storage-card .size-left{
+    position: absolute;
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 144px;
+    height: 60px;
+    background-color: white;
+    right: 25px;
+    top: calc(-60px / 1.5);
+    border-radius: 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    
+}
+
+
+.size-left p{
+    color: var(--grayish-blue);
+    font-weight: 700;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 15px;
+}
+.size-left p span{
+    color: var(--very-dark-blue);
+    font-weight: 700;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.size-left::after{
+    position: absolute;
+    content: "";
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-right: 18px solid white;
+    right: 0;
+    top: 82%;
+    
+}
+
+
+.attribution{
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+    
+    
+}
+.attribution a{ 
+    text-decoration:none;
+    color: var(--gradient_2_color);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.attribution a:hover{ 
+    color: var(--gradient_1_color);
+    text-decoration: underline;
+}
+
+
+
+/* Actions */
+
+.fylo-card .icons div:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.storage-card:hover{
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+.storage-card:hover .progress{
+   transform: scale(1.03);
+   -webkit-transform: scale(1.03);
+   -moz-transform: scale(1.03);
+   -ms-transform: scale(1.03);
+   -o-transform: scale(1.03);
+   transform-origin: 0 100%;
+   animation: loading 0.5s linear;
+   -webkit-animation: loading 0.5s linear;
+}
+.storage-card:hover .size-left{
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+
+
+
+.fylo-card:hover{
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+
+
+
+ @keyframes loading{
+
+    from{
+        transform: scaleX(0);
+        -webkit-transform: scaleX(0);
+        -moz-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        -o-transform: scaleX(0);
+}
+
+to{
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+}
+
+ }
+
+
+
+ /* Media Query */
+
+ @media (max-width:775px) {
+    body{
+        background-image: url(images/bg-mobile.png);
+        background-position: 0;
+        background-size: cover;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .fylo-card img{
+        width: 40%;
+        max-width: 120px;
+        height: 30%;
+        max-height: 50px;
+        margin-top: 22px;
+    }
+
+   .fylo-card .storage-card{
+    overflow: hidden;
+   }
+    .fylo-card{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .storage-card{
+        margin: 0;
+        width: 100%;
+    }
+    .storage-card .size-left{
+        left: calc(50% - 72px);
+        top: calc((50% + 32px));
+    }
+    .storage-card .size-left::after{
+        content: none;
+    }
+    
+    
+ }
+
+
